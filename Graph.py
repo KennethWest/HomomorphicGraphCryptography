@@ -231,15 +231,3 @@ class Graph(object):
                                         connectionstyle="arc3,rad=rrr".replace('rrr', str(0.3 * e[2])), ), )
         plt.axis('off')
         plt.show()
-
-    def find_weight(self, v1, v2):
-        mapped_v1 = None
-        mapped_v2 = None
-        for key in self.keys[-1]:
-            if v1 == key[0]:
-                mapped_v1 = key[1]
-            if v2 == key[0]:
-                mapped_v2 = key[1]
-        for edge in self.edge_list:
-            if edge[0] == mapped_v1 and edge[1] == mapped_v2:
-                return edge[2]
